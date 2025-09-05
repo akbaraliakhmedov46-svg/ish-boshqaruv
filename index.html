@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --success: #10b981;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --border: #cbd5e1;
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary: #2D7FF9;
+            --primary-dark: #1A56B0;
+            --secondary: #00A876;
+            --accent: #FF9A00;
+            --danger: #E53935;
+            --warning: #FF9A00;
+            --success: #00A876;
+            --light: #F8F9FA;
+            --dark: #1E293B;
+            --gray: #64748B;
+            --gray-light: #E2E8F0;
+            --border: #CBD5E1;
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.2s ease;
         }
         
         * {
@@ -34,7 +34,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background-color: #F5F7FA;
             color: var(--dark);
             line-height: 1.6;
             min-height: 100vh;
@@ -50,66 +50,48 @@
         .app-header {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 20px;
-            border-radius: 0 0 24px 24px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 25px;
+            padding: 16px;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
         }
         
-        .app-header::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
         .app-header h1 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px;
+            margin-bottom: 4px;
         }
         
         .company-subtitle {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.9;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .current-date {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.9;
             display: flex;
             align-items: center;
         }
         
         .current-date i {
-            margin-right: 8px;
+            margin-right: 6px;
         }
         
         /* Navigation Tabs */
         .nav-tabs-container {
             background: white;
-            border-radius: 16px;
-            margin: 0 15px 25px;
+            margin: 0 12px 20px;
+            border-radius: 8px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
-            position: sticky;
-            top: 10px;
-            z-index: 100;
         }
         
         .nav-tabs {
             display: flex;
             overflow-x: auto;
-            padding: 5px;
-            scrollbar-width: none;
+            padding: 4px;
         }
         
         .nav-tabs::-webkit-scrollbar {
@@ -118,43 +100,42 @@
         
         .nav-tab {
             flex: 1;
-            min-width: 100px;
-            padding: 14px 12px;
+            min-width: 80px;
+            padding: 12px 8px;
             text-align: center;
             cursor: pointer;
-            border-radius: 12px;
+            border-radius: 6px;
             transition: var(--transition);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--gray);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         
         .nav-tab i {
-            font-size: 18px;
-            margin-bottom: 6px;
+            font-size: 16px;
+            margin-bottom: 4px;
         }
         
         .nav-tab.active {
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(45, 127, 249, 0.1);
             color: var(--primary);
             font-weight: 600;
         }
         
         /* Message Container */
         #message-container {
-            padding: 0 15px;
-            margin-bottom: 20px;
+            padding: 0 12px;
+            margin-bottom: 16px;
         }
         
         .message {
-            padding: 14px 16px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            font-size: 14px;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 13px;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -162,31 +143,31 @@
         }
         
         .message i {
-            margin-right: 10px;
-            font-size: 18px;
+            margin-right: 8px;
+            font-size: 16px;
         }
         
         .success {
-            background-color: #ecfdf5;
+            background-color: #ECFDF5;
             color: #047857;
-            border: 1px solid #d1fae5;
+            border: 1px solid #D1FAE5;
         }
         
         .error {
-            background-color: #fef2f2;
-            color: #b91c1c;
-            border: 1px solid #fee2e2;
+            background-color: #FEF2F2;
+            color: #B91C1C;
+            border: 1px solid #FEE2E2;
         }
         
         /* Card Styles */
         .card {
             background: white;
-            border-radius: 20px;
-            padding: 24px;
-            margin: 0 15px 25px;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 12px 20px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--border);
         }
         
         .card:active {
@@ -194,17 +175,17 @@
         }
         
         .card-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             color: var(--dark);
         }
         
         .card-title i {
-            margin-right: 12px;
-            font-size: 20px;
+            margin-right: 10px;
+            font-size: 18px;
             color: var(--primary);
         }
         
@@ -212,20 +193,19 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 16px;
         }
         
         .stat-card {
             background: white;
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 16px;
             text-align: center;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--border);
             position: relative;
-            overflow: hidden;
         }
         
         .stat-card::before {
@@ -234,47 +214,42 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--primary-dark));
         }
         
-        .stat-card:active {
-            transform: scale(0.97);
-        }
-        
         .stat-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 12px;
-            font-size: 20px;
-            background: rgba(59, 130, 246, 0.1);
+            margin: 0 auto 8px;
+            font-size: 16px;
+            background: rgba(45, 127, 249, 0.1);
             color: var(--primary);
         }
         
         .stat-card:nth-child(2) .stat-icon {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(0, 168, 118, 0.1);
             color: var(--success);
         }
         
         .stat-card:nth-child(3) .stat-icon {
-            background: rgba(245, 158, 11, 0.1);
+            background: rgba(255, 154, 0, 0.1);
             color: var(--warning);
         }
         
         .stat-card:nth-child(4) .stat-icon {
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(229, 57, 53, 0.1);
             color: var(--danger);
         }
         
         .stat-value {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 700;
-            margin: 8px 0;
-            letter-spacing: 0.5px;
+            margin: 6px 0;
         }
         
         .stat-card:nth-child(1) .stat-value {
@@ -294,30 +269,30 @@
         }
         
         .stat-label {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
             font-weight: 500;
         }
         
         /* Form Styles */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
             color: var(--dark);
-            font-size: 15px;
+            font-size: 14px;
         }
         
         input, select {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 15px;
             transition: var(--transition);
             background: var(--light);
         }
@@ -325,55 +300,49 @@
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 0 3px rgba(45, 127, 249, 0.2);
         }
         
         /* Button Styles */
         .btn {
             display: block;
             width: 100%;
-            padding: 17px;
+            padding: 14px;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             text-align: center;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
         
         .btn-primary:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+            transform: translateY(1px);
         }
         
         .btn-outline {
             background: transparent;
             color: var(--primary);
-            border: 1.5px solid var(--primary);
-        }
-        
-        .btn-outline:active {
-            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary);
         }
         
         .btn-icon {
-            margin-right: 8px;
+            margin-right: 6px;
         }
         
         /* Chart Container */
         .chart-container {
             position: relative;
-            height: 320px;
+            height: 280px;
             width: 100%;
-            margin: 20px 0;
+            margin: 16px 0;
         }
         
         /* Order List */
@@ -383,55 +352,51 @@
         
         .order-item {
             background: white;
-            border-radius: 14px;
-            padding: 18px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
             transition: var(--transition);
-        }
-        
-        .order-item:active {
-            transform: scale(0.99);
         }
         
         .order-title {
             font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 6px;
             color: var(--dark);
         }
         
         .order-details {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .progress-bar {
-            height: 10px;
+            height: 8px;
             background-color: var(--gray-light);
-            border-radius: 5px;
-            margin: 15px 0;
+            border-radius: 4px;
+            margin: 12px 0;
             overflow: hidden;
         }
         
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 5px;
+            border-radius: 4px;
             transition: width 0.5s ease;
         }
         
         /* Loader */
         .loader {
-            border: 3px solid var(--gray-light);
-            border-top: 3px solid var(--primary);
+            border: 2px solid var(--gray-light);
+            border-top: 2px solid var(--primary);
             border-radius: 50%;
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             animation: spin 1s linear infinite;
-            margin: 25px auto;
+            margin: 20px auto;
         }
         
         .hidden {
@@ -442,17 +407,17 @@
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 12px;
         }
         
         .quick-action-btn {
             background: white;
-            border-radius: 14px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 16px;
             text-align: center;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--border);
         }
         
         .quick-action-btn:active {
@@ -460,14 +425,14 @@
         }
         
         .quick-action-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 8px;
             color: var(--primary);
         }
         
         .quick-action-text {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--dark);
         }
         
@@ -478,7 +443,7 @@
         }
         
         @keyframes slideIn {
-            from { transform: translateY(-10px); opacity: 0; }
+            from { transform: translateY(-8px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         
@@ -503,7 +468,7 @@
             }
             
             .nav-tab {
-                min-width: 120px;
+                min-width: 100px;
             }
             
             .quick-actions {
@@ -514,73 +479,26 @@
         /* Tab Content Animation */
         .tab-content {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.3s ease;
         }
         
         .tab-content.active {
             display: block;
         }
         
-        /* Section Specific Styles */
-        .section-card {
-            margin-bottom: 25px;
-            border-top: 4px solid;
-        }
-        
-        .bichish-card {
-            border-top-color: #3b82f6;
-        }
-        
-        .tasnif-card {
-            border-top-color: #10b981;
-        }
-        
-        .tikuv-card {
-            border-top-color: #f59e0b;
-        }
-        
-        .qadoqlash-card {
-            border-top-color: #ef4444;
-        }
-        
-        /* Badge Styles */
-        .badge {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-        
-        .badge-success {
-            background: var(--success);
-            color: white;
-        }
-        
-        .badge-warning {
-            background: var(--warning);
-            color: white;
-        }
-        
-        .badge-danger {
-            background: var(--danger);
-            color: white;
-        }
-        
         /* Welcome Message */
         .welcome-message {
             text-align: center;
-            padding: 20px;
-            margin: 10px 15px 25px;
+            padding: 16px;
+            margin: 8px 12px 20px;
             background: white;
-            border-radius: 20px;
+            border-radius: 8px;
             box-shadow: var(--card-shadow);
         }
         
         .welcome-message h2 {
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .welcome-message p {
@@ -590,10 +508,10 @@
         /* Status Indicators */
         .status-indicator {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            margin-right: 8px;
+            margin-right: 6px;
         }
         
         .status-active {
@@ -611,19 +529,65 @@
         /* Floating Action Button */
         .fab {
             position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
+            bottom: 80px;
+            right: 16px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             z-index: 1000;
-            font-size: 24px;
+            font-size: 22px;
+        }
+        
+        /* Moy Sklad style improvements */
+        .section-card {
+            border-left: 4px solid;
+            padding-left: 16px;
+        }
+        
+        .bichish-card {
+            border-left-color: var(--primary);
+        }
+        
+        .tasnif-card {
+            border-left-color: var(--success);
+        }
+        
+        .tikuv-card {
+            border-left-color: var(--warning);
+        }
+        
+        .qadoqlash-card {
+            border-left-color: var(--danger);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        
+        .badge-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .badge-warning {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .badge-danger {
+            background: var(--danger);
+            color: white;
         }
     </style>
 </head>
@@ -674,28 +638,28 @@
                     <div class="stat-icon">
                         <i class="fas fa-calendar-day"></i>
                     </div>
-                    <div class="stat-value" id="daily-work">1,245</div>
+                    <div class="stat-value" id="daily-work">0</div>
                     <div class="stat-label">Кунлик иш</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-calendar-week"></i>
                     </div>
-                    <div class="stat-value" id="weekly-work">7,865</div>
+                    <div class="stat-value" id="weekly-work">0</div>
                     <div class="stat-label">Ҳафталик иш</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
-                    <div class="stat-value" id="monthly-plan">78%</div>
+                    <div class="stat-value" id="monthly-plan">0%</div>
                     <div class="stat-label">Ойлик режа</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <div class="stat-value" id="total-orders">24</div>
+                    <div class="stat-value" id="total-orders">0</div>
                     <div class="stat-label">Буюртмалар</div>
                 </div>
             </div>
@@ -738,11 +702,11 @@
                 <div class="card-title"><i class="fas fa-cut"></i> Бичиш</div>
                 <div class="form-group">
                     <label for="bichish-ish">Иш сони</label>
-                    <input type="number" id="bichish-ish" placeholder="Иш микдорини киритинг" value="350">
+                    <input type="number" id="bichish-ish" placeholder="Иш микдорини киритинг">
                 </div>
                 <div class="form-group">
                     <label for="bichish-hodim">Ходим сони</label>
-                    <input type="number" id="bichish-hodim" placeholder="Ходимлар сонини киритинг" value="8">
+                    <input type="number" id="bichish-hodim" placeholder="Ходимлар сонини киритинг">
                 </div>
                 <button class="btn btn-primary" data-section="bichish"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -751,19 +715,19 @@
                 <div class="card-title"><i class="fas fa-file-alt"></i> Тасниф</div>
                 <div class="form-group">
                     <label for="tasnif-dikimga">Дикимга қилинган иш</label>
-                    <input type="number" id="tasnif-dikimga" placeholder="Дикимга қилинган иш сони" value="120">
+                    <input type="number" id="tasnif-dikimga" placeholder="Дикимга қилинган иш сони">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-pechat">Печат қилинган иш</label>
-                    <input type="number" id="tasnif-pechat" placeholder="Печат қилинган иш сони" value="85">
+                    <input type="number" id="tasnif-pechat" placeholder="Печат қилинган иш сони">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-vishivka">Вишивка қилинган иш</label>
-                    <input type="number" id="tasnif-vishivka" placeholder="Вишивка қилинган иш сони" value="45">
+                    <input type="number" id="tasnif-vishivka" placeholder="Вишивка қилинган иш сони">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-hodim">Ходим сони</label>
-                    <input type="number" id="tasnif-hodim" placeholder="Ходимлар сонини киритинг" value="12">
+                    <input type="number" id="tasnif-hodim" placeholder="Ходимлар сонини киритинг">
                 </div>
                 <button class="btn btn-primary" data-section="tasnif"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -772,15 +736,15 @@
                 <div class="card-title"><i class="fas fa-tshirt"></i> Тикув</div>
                 <div class="form-group">
                     <label for="tikuv-ish">Иш сони</label>
-                    <input type="number" id="tikuv-ish" placeholder="Иш микдорини киритинг" value="520">
+                    <input type="number" id="tikuv-ish" placeholder="Иш микдорини киритинг">
                 </div>
                 <div class="form-group">
                     <label for="tikuv-hodim">Ходим сони</label>
-                    <input type="number" id="tikuv-hodim" placeholder="Ходимлар сонини киритинг" value="15">
+                    <input type="number" id="tikuv-hodim" placeholder="Ходимлар сонини киритинг">
                 </div>
                 <div class="form-group">
                     <label for="tikuv-oyoqchi">Оёқчи ходим сони</label>
-                    <input type="number" id="tikuv-oyoqchi" placeholder="Оёқчи ходимлар сонини киритинг" value="3">
+                    <input type="number" id="tikuv-oyoqchi" placeholder="Оёқчи ходимлар сонини киритинг">
                 </div>
                 <button class="btn btn-primary" data-section="tikuv"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -789,11 +753,11 @@
                 <div class="card-title"><i class="fas fa-box"></i> Қадоқлаш</div>
                 <div class="form-group">
                     <label for="qadoqlash-ish">Иш сони</label>
-                    <input type="number" id="qadoqlash-ish" placeholder="Иш микдорини киритинг" value="210">
+                    <input type="number" id="qadoqlash-ish" placeholder="Иш микдорини киритинг">
                 </div>
                 <div class="form-group">
                     <label for="qadoqlash-hodim">Ходим сони</label>
-                    <input type="number" id="qadoqlash-hodim" placeholder="Ходимлар сонини киритинг" value="6">
+                    <input type="number" id="qadoqlash-hodim" placeholder="Ходимлар сонини киритинг">
                 </div>
                 <button class="btn btn-primary" data-section="qadoqlash"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -830,37 +794,14 @@
             <div class="card">
                 <div class="card-title">
                     <i class="fas fa-list"></i> Буюртмалар рўйхати
-                    <button class="btn btn-outline" id="refresh-orders" style="width: auto; padding: 8px 12px; margin: 0 0 0 auto;">
+                    <button class="btn btn-outline" id="refresh-orders" style="width: auto; padding: 6px 10px; margin: 0 0 0 auto;">
                         <i class="fas fa-sync-alt"></i>
                     </button>
                 </div>
                 <div class="loader hidden" id="orders-loader"></div>
                 <ul class="order-list" id="orders-list">
                     <li class="order-item">
-                        <div class="order-title">Ko'ylaklar partiyasi <span class="badge badge-success">75%</span></div>
-                        <div class="order-details">
-                            750/1000 та
-                            <br>Бўлим: Тикув
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 75%"></div>
-                        </div>
-                        <div class="order-details">
-                            Муддат: 25.09.2023 (Қолган кун: 5)
-                        </div>
-                    </li>
-                    <li class="order-item">
-                        <div class="order-title">Shimlar to'plami <span class="badge badge-warning">45%</span></div>
-                        <div class="order-details">
-                            450/1000 та
-                            <br>Бўлим: Бичиш
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 45%"></div>
-                        </div>
-                        <div class="order-details">
-                            Муддат: 28.09.2023 (Қолган кун: 8)
-                        </div>
+                        <div class="order-title">Маълумотлар юкланмоқда...</div>
                     </li>
                 </ul>
             </div>
@@ -904,13 +845,6 @@
                     <canvas id="weeklyTrendChart"></canvas>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-title"><i class="fas fa-percentage"></i> Фоизлар диаграммаси</div>
-                <div class="chart-container">
-                    <canvas id="percentagePieChart"></canvas>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -931,12 +865,20 @@
             year: 'numeric'
         });
         
+        // Google Sheets API configuration
+        const SPREADSHEET_ID = '142jCderpzFBwHqJJjbDQW633XXh8UC4o-iZkjhheVWs'; // Sizning Spreadsheet ID
+        const API_KEY = '7980938543:AAGULbsnJYRKanRFqdV9EBenSc9ceB-RILM'; // Google API kaliti
+        const SHEET_NAMES = {
+            REPORT: 'Иш режаси',
+            MONTHLY: 'Ойлик хисобот',
+            ORDERS: 'Буюртмалар'
+        };
+        
         // График объектлари
         let monthlyProgressChart = null;
         let productivityChart = null;
         let sectionsChart = null;
         let weeklyTrendChart = null;
-        let percentagePieChart = null;
         
         // Навигация
         const navTabs = document.querySelectorAll('.nav-tab');
@@ -1011,70 +953,103 @@
             showMessage('✅ Функционал ишга туширилди', 'success');
         });
         
+        // Google Sheets API функциялари
+        async function fetchSheetData(sheetName, range = '') {
+            try {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}${range}?key=${API_KEY}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                return data.values || [];
+            } catch (error) {
+                console.error('Google Sheets маълумотларини олишда хатолик:', error);
+                showMessage('❌ Маълумотларни олишда хатолик юз берди', 'error');
+                return [];
+            }
+        }
+        
+        async function appendSheetData(sheetName, values) {
+            try {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}:append?valueInputOption=USER_ENTERED&key=${API_KEY}`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        values: [values]
+                    })
+                });
+                return response.ok;
+            } catch (error) {
+                console.error('Google Sheets маълумотларини қўшишда хатолик:', error);
+                showMessage('❌ Маълумотларни сақлашда хатолик юз берди', 'error');
+                return false;
+            }
+        }
+        
+        async function updateSheetData(sheetName, range, values) {
+            try {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}!${range}?valueInputOption=USER_ENTERED&key=${API_KEY}`;
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        values: [values]
+                    })
+                });
+                return response.ok;
+            } catch (error) {
+                console.error('Google Sheets маълумотларини янгилашда хатолик:', error);
+                showMessage('❌ Маълумотларни янгилашда хатолик юз берди', 'error');
+                return false;
+            }
+        }
+        
         // Дастлабки график маълумотлари
         function initCharts() {
-            createMonthlyProgressChart({
-                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
-                plans: [7000, 6500, 6000, 5500],
-                actuals: [5600, 5200, 4800, 4200]
-            });
-            
-            createProductivityChart({
-                days: ['Душ', 'Сеш', 'Чор', 'Пай', 'Жум', 'Шан', 'Якш'],
-                bichish: [350, 420, 380, 450, 500, 0, 0],
-                tasnif: [250, 280, 320, 300, 350, 0, 0],
-                tikuv: [520, 580, 600, 550, 620, 0, 0],
-                qadoqlash: [210, 230, 250, 200, 240, 0, 0]
-            });
-            
-            createSectionsChart({
-                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
-                values: [5600, 5200, 4800, 4200]
-            });
-            
-            createWeeklyTrendChart({
-                days: ['Душ', 'Сеш', 'Чор', 'Пай', 'Жум', 'Шан', 'Якш'],
-                values: [1330, 1510, 1550, 1500, 1710, 0, 0]
-            });
-            
-            createPercentagePieChart({
-                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
-                values: [80, 75, 70, 65]
-            });
+            // Сервердан график маълумотларини олиш
+            loadChartData();
         }
         
         // Функциялар
-        function sendSectionData(section) {
+        async function sendSectionData(section) {
             showLoader();
             
-            let data = { action: 'add_section_data', section: section };
+            let data = [];
+            const today = new Date().toLocaleDateString('uz-UZ');
             
             switch(section) {
                 case 'bichish':
-                    data.ish_soni = document.getElementById('bichish-ish').value;
-                    data.hodim_soni = document.getElementById('bichish-hodim').value;
+                    const bichishIsh = document.getElementById('bichish-ish').value;
+                    const bichishHodim = document.getElementById('bichish-hodim').value;
+                    data = [today, bichishIsh, bichishHodim, '', '', '', '', '', '', '', '', ''];
                     break;
                 case 'tasnif':
-                    data.dikimga = document.getElementById('tasnif-dikimga').value;
-                    data.pechat = document.getElementById('tasnif-pechat').value;
-                    data.vishivka = document.getElementById('tasnif-vishivka').value;
-                    data.hodim_soni = document.getElementById('tasnif-hodim').value;
+                    const dikimga = document.getElementById('tasnif-dikimga').value;
+                    const pechat = document.getElementById('tasnif-pechat').value;
+                    const vishivka = document.getElementById('tasnif-vishivka').value;
+                    const tasnifHodim = document.getElementById('tasnif-hodim').value;
+                    data = [today, '', '', dikimga, pechat, vishivka, tasnifHodim, '', '', '', '', ''];
                     break;
                 case 'tikuv':
-                    data.ish_soni = document.getElementById('tikuv-ish').value;
-                    data.hodim_soni = document.getElementById('tikuv-hodim').value;
-                    data.oyoqchi_hodim = document.getElementById('tikuv-oyoqchi').value;
+                    const tikuvIsh = document.getElementById('tikuv-ish').value;
+                    const tikuvHodim = document.getElementById('tikuv-hodim').value;
+                    const oyoqchiHodim = document.getElementById('tikuv-oyoqchi').value;
+                    data = [today, '', '', '', '', '', '', tikuvIsh, tikuvHodim, oyoqchiHodim, '', ''];
                     break;
                 case 'qadoqlash':
-                    data.ish_soni = document.getElementById('qadoqlash-ish').value;
-                    data.hodim_soni = document.getElementById('qadoqlash-hodim').value;
+                    const qadoqlashIsh = document.getElementById('qadoqlash-ish').value;
+                    const qadoqlashHodim = document.getElementById('qadoqlash-hodim').value;
+                    data = [today, '', '', '', '', '', '', '', '', '', qadoqlashIsh, qadoqlashHodim];
                     break;
             }
             
             // Маълумотларни текшириш
             let isValid = true;
-            for (let key in data) {
-                if (key !== 'action' && key !== 'section' && (!data[key] || data[key] === '0')) {
+            for (let i = 1; i < data.length; i++) {
+                if (data[i] === '' || data[i] === '0') {
                     isValid = false;
                     break;
                 }
@@ -1086,40 +1061,43 @@
                 return;
             }
             
-            tg.sendData(JSON.stringify(data));
-            showMessage('✅ Маълумотлар муваффақиятли сақланди!', 'success');
+            // Google Sheetsга маълумотларни қўшиш
+            const success = await appendSheetData(SHEET_NAMES.REPORT, data);
             
-            // Формани тозалаш
-            switch(section) {
-                case 'bichish':
-                    document.getElementById('bichish-ish').value = '';
-                    document.getElementById('bichish-hodim').value = '';
-                    break;
-                case 'tasnif':
-                    document.getElementById('tasnif-dikimga').value = '';
-                    document.getElementById('tasnif-pechat').value = '';
-                    document.getElementById('tasnif-vishivka').value = '';
-                    document.getElementById('tasnif-hodim').value = '';
-                    break;
-                case 'tikuv':
-                    document.getElementById('tikuv-ish').value = '';
-                    document.getElementById('tikuv-hodim').value = '';
-                    document.getElementById('tikuv-oyoqchi').value = '';
-                    break;
-                case 'qadoqlash':
-                    document.getElementById('qadoqlash-ish').value = '';
-                    document.getElementById('qadoqlash-hodim').value = '';
-                    break;
+            if (success) {
+                showMessage('✅ Маълумотлар муваффақиятли сақланди!', 'success');
+                
+                // Формани тозалаш
+                switch(section) {
+                    case 'bichish':
+                        document.getElementById('bichish-ish').value = '';
+                        document.getElementById('bichish-hodim').value = '';
+                        break;
+                    case 'tasnif':
+                        document.getElementById('tasnif-dikimga').value = '';
+                        document.getElementById('tasnif-pechat').value = '';
+                        document.getElementById('tasnif-vishivka').value = '';
+                        document.getElementById('tasnif-hodim').value = '';
+                        break;
+                    case 'tikuv':
+                        document.getElementById('tikuv-ish').value = '';
+                        document.getElementById('tikuv-hodim').value = '';
+                        document.getElementById('tikuv-oyoqchi').value = '';
+                        break;
+                    case 'qadoqlash':
+                        document.getElementById('qadoqlash-ish').value = '';
+                        document.getElementById('qadoqlash-hodim').value = '';
+                        break;
+                }
+                
+                // Маълумотларни янгилаш
+                refreshData();
             }
             
-            // Маълумотларни янгилаш
-            setTimeout(() => {
-                refreshData();
-                hideLoader();
-            }, 1000);
+            hideLoader();
         }
         
-        function addNewOrder() {
+        async function addNewOrder() {
             const name = document.getElementById('order-name').value;
             const quantity = document.getElementById('order-quantity').value;
             const deadline = document.getElementById('order-deadline').value;
@@ -1130,70 +1108,381 @@
                 return;
             }
             
-            const data = {
-                action: 'add_order',
-                name: name,
-                quantity: quantity,
-                deadline: deadline,
-                section: section
-            };
+            const today = new Date().toLocaleDateString('uz-UZ');
+            const deadlineDate = new Date(deadline);
+            const todayDate = new Date();
+            const daysLeft = Math.ceil((deadlineDate - todayDate) / (1000 * 60 * 60 * 24));
             
-            tg.sendData(JSON.stringify(data));
-            showMessage('✅ Буюртма муваффақиятли қўшилди!', 'success');
+            const data = [
+                today,
+                name,
+                quantity,
+                0,
+                quantity,
+                "0%",
+                "100%",
+                deadline,
+                daysLeft,
+                section
+            ];
             
-            // Формани тозалаш
-            document.getElementById('order-name').value = '';
-            document.getElementById('order-quantity').value = '';
-            document.getElementById('order-deadline').value = '';
+            const success = await appendSheetData(SHEET_NAMES.ORDERS, data);
             
-            // Буюртмалар рўйхатини янгилаш
-            setTimeout(loadOrders, 1000);
+            if (success) {
+                showMessage('✅ Буюртма муваффақиятли қўшилди!', 'success');
+                
+                // Формани тозалаш
+                document.getElementById('order-name').value = '';
+                document.getElementById('order-quantity').value = '';
+                document.getElementById('order-deadline').value = '';
+                
+                // Буюртмалар рўйхатини янгилаш
+                loadOrders();
+            }
         }
         
-        function getReport(reportType) {
+        async function getReport(reportType) {
             showLoader();
-            const data = { action: 'get_report', report_type: reportType };
-            tg.sendData(JSON.stringify(data));
+            
+            let reportData = [];
+            let reportText = '';
+            
+            switch(reportType) {
+                case 'daily':
+                    reportData = await fetchSheetData(SHEET_NAMES.REPORT);
+                    reportText = formatDailyReport(reportData);
+                    break;
+                case 'weekly':
+                    reportData = await fetchSheetData(SHEET_NAMES.REPORT);
+                    reportText = formatWeeklyReport(reportData);
+                    break;
+                case 'monthly':
+                    reportData = await fetchSheetData(SHEET_NAMES.MONTHLY);
+                    reportText = formatMonthlyReport(reportData);
+                    break;
+                case 'orders':
+                    reportData = await fetchSheetData(SHEET_NAMES.ORDERS);
+                    reportText = formatOrdersReport(reportData);
+                    break;
+            }
             
             // Натижа кардасини кўрсатиш
             document.getElementById('report-result-card').classList.remove('hidden');
-            document.getElementById('report-result').innerHTML = 
-                '<div class="loader"></div><p style="text-align: center;">Хисобот тайёрланимоқда...</p>';
+            document.getElementById('report-result').innerHTML = reportText;
             
             hideLoader();
         }
         
-        function refreshData() {
+        async function refreshData() {
             showLoader();
-            const data = { action: 'refresh_data' };
-            tg.sendData(JSON.stringify(data));
             
             // Статистикани янгилаш
-            updateDashboard();
+            await updateDashboard();
+            hideLoader();
         }
         
-        function loadOrders() {
+        async function loadOrders() {
             const ordersList = document.getElementById('orders-list');
             const loader = document.getElementById('orders-loader');
             
             ordersList.innerHTML = '';
             loader.classList.remove('hidden');
             
-            // Сервердан буюртмалар рўйхатини олиш учун сўров юбориш
-            const data = { action: 'get_orders' };
-            tg.sendData(JSON.stringify(data));
+            // Google Sheetsдан буюртмалар рўйхатини олиш
+            const ordersData = await fetchSheetData(SHEET_NAMES.ORDERS);
+            
+            if (ordersData.length <= 1) {
+                ordersList.innerHTML = '<li class="order-item">Ҳозирча буюртмалар мавжуд эмас</li>';
+                loader.classList.add('hidden');
+                return;
+            }
+            
+            // Биринчи қатор сарлавҳа бўлгани учун уни ўтказиб юборамиз
+            for (let i = 1; i < ordersData.length; i++) {
+                const order = ordersData[i];
+                if (order.length < 10) continue;
+                
+                const name = order[1];
+                const total = parseInt(order[2]) || 0;
+                const done = parseInt(order[3]) || 0;
+                const deadline = order[7];
+                const daysLeft = order[8];
+                const section = order[9];
+                
+                const percentage = total > 0 ? Math.round((done / total) * 100) : 0;
+                
+                let badgeClass = 'badge-success';
+                if (percentage < 50) badgeClass = 'badge-danger';
+                else if (percentage < 80) badgeClass = 'badge-warning';
+                
+                const listItem = document.createElement('li');
+                listItem.className = 'order-item';
+                listItem.innerHTML = `
+                    <div class="order-title">${name} <span class="badge ${badgeClass}">${percentage}%</span></div>
+                    <div class="order-details">
+                        ${done}/${total} та
+                        <br>Бўлим: ${section}
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${percentage}%"></div>
+                    </div>
+                    <div class="order-details">
+                        Муддат: ${deadline} (Қолган кун: ${daysLeft})
+                    </div>
+                `;
+                ordersList.appendChild(listItem);
+            }
+            
+            loader.classList.add('hidden');
         }
         
-        function updateDashboard() {
-            // Сервердан статистика маълумотларини олиш
-            const data = { action: 'get_dashboard_data' };
-            tg.sendData(JSON.stringify(data));
+        async function updateDashboard() {
+            // Google Sheetsдан маълумотларни олиш
+            const reportData = await fetchSheetData(SHEET_NAMES.REPORT);
+            const monthlyData = await fetchSheetData(SHEET_NAMES.MONTHLY);
+            const ordersData = await fetchSheetData(SHEET_NAMES.ORDERS);
+            
+            // Кунлик иш
+            let dailyWork = 0;
+            if (reportData.length > 1) {
+                const lastRow = reportData[reportData.length - 1];
+                // Бичиш
+                if (lastRow[1]) dailyWork += parseInt(lastRow[1]);
+                // Тасниф (дикимга + печат + вишивка)
+                if (lastRow[3]) dailyWork += parseInt(lastRow[3]);
+                if (lastRow[4]) dailyWork += parseInt(lastRow[4]);
+                if (lastRow[5]) dailyWork += parseInt(lastRow[5]);
+                // Тикув
+                if (lastRow[7]) dailyWork += parseInt(lastRow[7]);
+                // Қадоқлаш
+                if (lastRow[10]) dailyWork += parseInt(lastRow[10]);
+            }
+            document.getElementById('daily-work').textContent = dailyWork;
+            
+            // Ҳафталик иш
+            let weeklyWork = 0;
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            for (let i = 1; i < reportData.length; i++) {
+                const row = reportData[i];
+                if (row.length < 2) continue;
+                
+                const rowDate = new Date(row[0]);
+                if (rowDate >= oneWeekAgo) {
+                    // Бичиш
+                    if (row[1]) weeklyWork += parseInt(row[1]);
+                    // Тасниф
+                    if (row[3]) weeklyWork += parseInt(row[3]);
+                    if (row[4]) weeklyWork += parseInt(row[4]);
+                    if (row[5]) weeklyWork += parseInt(row[5]);
+                    // Тикув
+                    if (row[7]) weeklyWork += parseInt(row[7]);
+                    // Қадоқлаш
+                    if (row[10]) weeklyWork += parseInt(row[10]);
+                }
+            }
+            document.getElementById('weekly-work').textContent = weeklyWork;
+            
+            // Ойлик режа
+            let monthlyPlan = 0;
+            if (monthlyData.length > 1) {
+                for (let i = 1; i < monthlyData.length; i++) {
+                    const row = monthlyData[i];
+                    if (row.length >= 3) {
+                        const plan = parseInt(row[1]) || 0;
+                        const done = parseInt(row[2]) || 0;
+                        if (plan > 0) {
+                            monthlyPlan += Math.round((done / plan) * 100);
+                        }
+                    }
+                }
+                monthlyPlan = Math.round(monthlyPlan / (monthlyData.length - 1));
+            }
+            document.getElementById('monthly-plan').textContent = monthlyPlan + '%';
+            
+            // Буюртмалар сони
+            const totalOrders = ordersData.length - 1; // Сарлавҳани олиб ташлаймиз
+            document.getElementById('total-orders').textContent = totalOrders;
         }
         
-        function initCharts() {
-            // Сервердан график маълумотларини олиш
-            const data = { action: 'get_chart_data' };
-            tg.sendData(JSON.stringify(data));
+        async function loadChartData() {
+            // Google Sheetsдан график учун маълумотларни олиш
+            const monthlyData = await fetchSheetData(SHEET_NAMES.MONTHLY);
+            const reportData = await fetchSheetData(SHEET_NAMES.REPORT);
+            
+            // Ойлик прогресс графиги
+            if (monthlyData.length > 1) {
+                const labels = [];
+                const plans = [];
+                const actuals = [];
+                
+                for (let i = 1; i < monthlyData.length; i++) {
+                    const row = monthlyData[i];
+                    if (row.length >= 3) {
+                        labels.push(row[0]);
+                        plans.push(parseInt(row[1]) || 0);
+                        actuals.push(parseInt(row[2]) || 0);
+                    }
+                }
+                
+                createMonthlyProgressChart({
+                    labels: labels,
+                    plans: plans,
+                    actuals: actuals
+                });
+            }
+            
+            // Иш чиқими таҳлили
+            if (reportData.length > 1) {
+                const days = [];
+                const bichish = [];
+                const tasnif = [];
+                const tikuv = [];
+                const qadoqlash = [];
+                
+                // Охирги 7 кунни оламиз
+                const startIndex = Math.max(1, reportData.length - 7);
+                
+                for (let i = startIndex; i < reportData.length; i++) {
+                    const row = reportData[i];
+                    if (row.length < 11) continue;
+                    
+                    days.push(row[0]);
+                    bichish.push(parseInt(row[1]) || 0);
+                    // Тасниф (дикимга + печат + вишивка)
+                    const tasnifTotal = (parseInt(row[3]) || 0) + (parseInt(row[4]) || 0) + (parseInt(row[5]) || 0);
+                    tasnif.push(tasnifTotal);
+                    tikuv.push(parseInt(row[7]) || 0);
+                    qadoqlash.push(parseInt(row[10]) || 0);
+                }
+                
+                createProductivityChart({
+                    days: days,
+                    bichish: bichish,
+                    tasnif: tasnif,
+                    tikuv: tikuv,
+                    qadoqlash: qadoqlash
+                });
+            }
+        }
+        
+        // Хисобот форматлаш функциялари
+        function formatDailyReport(data) {
+            if (data.length <= 1) {
+                return "<p>Ҳозирча кунлик маълумотлар мавжуд эмас.</p>";
+            }
+            
+            const lastRow = data[data.length - 1];
+            let html = "<h3>Кунлик хисобот</h3>";
+            html += `<p>Сана: ${lastRow[0]}</p>`;
+            html += "<ul>";
+            
+            if (lastRow[1]) html += `<li>Бичиш: ${lastRow[1]} та</li>`;
+            if (lastRow[3]) html += `<li>Тасниф (дикимга): ${lastRow[3]} та</li>`;
+            if (lastRow[4]) html += `<li>Тасниф (печат): ${lastRow[4]} та</li>`;
+            if (lastRow[5]) html += `<li>Тасниф (вишивка): ${lastRow[5]} та</li>`;
+            if (lastRow[7]) html += `<li>Тикув: ${lastRow[7]} та</li>`;
+            if (lastRow[10]) html += `<li>Қадоқлаш: ${lastRow[10]} та</li>`;
+            
+            html += "</ul>";
+            return html;
+        }
+        
+        function formatWeeklyReport(data) {
+            if (data.length <= 1) {
+                return "<p>Ҳозирча ҳафталик маълумотлар мавжуд эмас.</p>";
+            }
+            
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            let bichish = 0;
+            let tasnif = 0;
+            let tikuv = 0;
+            let qadoqlash = 0;
+            
+            for (let i = 1; i < data.length; i++) {
+                const row = data[i];
+                if (row.length < 2) continue;
+                
+                const rowDate = new Date(row[0]);
+                if (rowDate >= oneWeekAgo) {
+                    if (row[1]) bichish += parseInt(row[1]);
+                    if (row[3]) tasnif += parseInt(row[3]);
+                    if (row[4]) tasnif += parseInt(row[4]);
+                    if (row[5]) tasnif += parseInt(row[5]);
+                    if (row[7]) tikuv += parseInt(row[7]);
+                    if (row[10]) qadoqlash += parseInt(row[10]);
+                }
+            }
+            
+            let html = "<h3>Ҳафталик хисобот</h3>";
+            html += `<p>Ҳафта: ${oneWeekAgo.toLocaleDateString('uz-UZ')} - ${new Date().toLocaleDateString('uz-UZ')}</p>`;
+            html += "<ul>";
+            html += `<li>Бичиш: ${bichish} та</li>`;
+            html += `<li>Тасниф: ${tasnif} та</li>`;
+            html += `<li>Тикув: ${tikuv} та</li>`;
+            html += `<li>Қадоқлаш: ${qadoqlash} та</li>`;
+            html += `<li>Жами: ${bichish + tasnif + tikuv + qadoqlash} та</li>`;
+            html += "</ul>";
+            
+            return html;
+        }
+        
+        function formatMonthlyReport(data) {
+            if (data.length <= 1) {
+                return "<p>Ҳозирча ойлик маълумотлар мавжуд эмас.</p>";
+            }
+            
+            let html = "<h3>Ойлик хисобот</h3>";
+            html += "<table style='width:100%; border-collapse: collapse;'>";
+            html += "<tr><th>Бўлим</th><th>Режа</th><th>Бажарилди</th><th>Фоиз</th></tr>";
+            
+            for (let i = 1; i < data.length; i++) {
+                const row = data[i];
+                if (row.length < 3) continue;
+                
+                const plan = parseInt(row[1]) || 0;
+                const done = parseInt(row[2]) || 0;
+                const percentage = plan > 0 ? Math.round((done / plan) * 100) : 0;
+                
+                html += `<tr>
+                    <td>${row[0]}</td>
+                    <td>${plan}</td>
+                    <td>${done}</td>
+                    <td>${percentage}%</td>
+                </tr>`;
+            }
+            
+            html += "</table>";
+            return html;
+        }
+        
+        function formatOrdersReport(data) {
+            if (data.length <= 1) {
+                return "<p>Ҳозирча буюртмалар мавжуд эмас.</p>";
+            }
+            
+            let html = "<h3>Буюртмалар хисоботи</h3>";
+            html += "<table style='width:100%; border-collapse: collapse;'>";
+            html += "<tr><th>Номи</th><th>Миқдори</th><th>Бажарилди</th><th>Муддат</th><th>Бўлим</th></tr>";
+            
+            for (let i = 1; i < data.length; i++) {
+                const row = data[i];
+                if (row.length < 10) continue;
+                
+                html += `<tr>
+                    <td>${row[1]}</td>
+                    <td>${row[2]}</td>
+                    <td>${row[3]}</td>
+                    <td>${row[7]}</td>
+                    <td>${row[9]}</td>
+                </tr>`;
+            }
+            
+            html += "</table>";
+            return html;
         }
         
         // График функциялари
@@ -1211,14 +1500,14 @@
                     datasets: [{
                         label: 'Режа',
                         data: data.plans,
-                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
+                        backgroundColor: 'rgba(45, 127, 249, 0.2)',
+                        borderColor: 'rgba(45, 127, 249, 1)',
                         borderWidth: 1
                     }, {
                         label: 'Бажарилди',
                         data: data.actuals,
-                        backgroundColor: 'rgba(16, 185, 129, 0.2)',
-                        borderColor: 'rgba(16, 185, 129, 1)',
+                        backgroundColor: 'rgba(0, 168, 118, 0.2)',
+                        borderColor: 'rgba(0, 168, 118, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -1252,25 +1541,25 @@
                     datasets: [{
                         label: 'Бичиш',
                         data: data.bichish,
-                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderColor: 'rgba(45, 127, 249, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Тасниф',
                         data: data.tasnif,
-                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderColor: 'rgba(0, 168, 118, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Тикув',
                         data: data.tikuv,
-                        borderColor: 'rgba(245, 158, 11, 1)',
+                        borderColor: 'rgba(255, 154, 0, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Қадоқлаш',
                         data: data.qadoqlash,
-                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderColor: 'rgba(229, 57, 53, 1)',
                         tension: 0.1,
                         fill: false
                     }]
@@ -1305,16 +1594,16 @@
                     datasets: [{
                         data: data.values,
                         backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(245, 158, 11, 0.7)',
-                            'rgba(239, 68, 68, 0.7)'
+                            'rgba(45, 127, 249, 0.7)',
+                            'rgba(0, 168, 118, 0.7)',
+                            'rgba(255, 154, 0, 0.7)',
+                            'rgba(229, 57, 53, 0.7)'
                         ],
                         borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(245, 158, 11, 1)',
-                            'rgba(239, 68, 68, 1)'
+                            'rgba(45, 127, 249, 1)',
+                            'rgba(0, 168, 118, 1)',
+                            'rgba(255, 154, 0, 1)',
+                            'rgba(229, 57, 53, 1)'
                         ],
                         borderWidth: 1
                     }]
@@ -1345,8 +1634,8 @@
                     datasets: [{
                         label: 'Иш чиқими',
                         data: data.values,
-                        backgroundColor: 'rgba(59, 130, 246, 0.5)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
+                        backgroundColor: 'rgba(45, 127, 249, 0.5)',
+                        borderColor: 'rgba(45, 127, 249, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -1360,46 +1649,6 @@
                                 display: true,
                                 text: 'Иш микдори'
                             }
-                        }
-                    }
-                }
-            });
-        }
-        
-        function createPercentagePieChart(data) {
-            const ctx = document.getElementById('percentagePieChart').getContext('2d');
-            
-            if (percentagePieChart) {
-                percentagePieChart.destroy();
-            }
-            
-            percentagePieChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: data.labels,
-                    datasets: [{
-                        data: data.values,
-                        backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(245, 158, 11, 0.7)',
-                            'rgba(239, 68, 68, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(245, 158, 11, 1)',
-                            'rgba(239, 68, 68, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
                         }
                     }
                 }
@@ -1441,102 +1690,6 @@
         refreshData();
         loadOrders();
         initCharts();
-        
-        // Telegram Web App дан келган маълумотларни қайта ишлаш
-        tg.onEvent('webAppDataReceived', (event) => {
-            try {
-                const data = JSON.parse(event.data);
-                
-                if (data.action === 'refresh_data_response') {
-                    // Статистика маълумотларини янгилаш
-                    if (data.daily_work) document.getElementById('daily-work').textContent = data.daily_work;
-                    if (data.weekly_work) document.getElementById('weekly-work').textContent = data.weekly_work;
-                    if (data.monthly_plan) document.getElementById('monthly-plan').textContent = data.monthly_plan + '%';
-                    if (data.total_orders) document.getElementById('total-orders').textContent = data.total_orders;
-                    
-                    hideLoader();
-                    showMessage('✅ Маълумотлар янгиланди!', 'success');
-                }
-                else if (data.action === 'get_orders_response') {
-                    // Буюртмалар рўйхатини янгилаш
-                    const ordersList = document.getElementById('orders-list');
-                    const loader = document.getElementById('orders-loader');
-                    
-                    ordersList.innerHTML = '';
-                    
-                    if (data.orders && data.orders.length > 0) {
-                        data.orders.forEach(order => {
-                            const percentage = (order.done / order.total) * 100;
-                            const listItem = document.createElement('li');
-                            listItem.className = 'order-item';
-                            
-                            let badgeClass = 'badge-success';
-                            if (percentage < 50) badgeClass = 'badge-danger';
-                            else if (percentage < 80) badgeClass = 'badge-warning';
-                            
-                            listItem.innerHTML = `
-                                <div class="order-title">${order.name} <span class="badge ${badgeClass}">${percentage.toFixed(1)}%</span></div>
-                                <div class="order-details">
-                                    ${order.done}/${order.total} та
-                                    <br>Бўлим: ${order.section}
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: ${percentage}%"></div>
-                                </div>
-                                <div class="order-details">
-                                    Муддат: ${order.deadline} (Қолган кун: ${order.daysLeft})
-                                </div>
-                            `;
-                            ordersList.appendChild(listItem);
-                        });
-                    } else {
-                        ordersList.innerHTML = '<li class="order-item">Ҳозирча буюртмалар мавжуд эмас</li>';
-                    }
-                    
-                    loader.classList.add('hidden');
-                }
-                else if (data.action === 'get_report_response') {
-                    // Хисобот натижасини кўрсатиш
-                    document.getElementById('report-result-card').classList.remove('hidden');
-                    document.getElementById('report-result').innerHTML = 
-                        `<pre style="white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 10px;">${data.report}</pre>`;
-                }
-                else if (data.action === 'get_dashboard_data_response') {
-                    // Dashboard маълумотларини янгилаш
-                    if (data.daily_work) document.getElementById('daily-work').textContent = data.daily_work;
-                    if (data.weekly_work) document.getElementById('weekly-work').textContent = data.weekly_work;
-                    if (data.monthly_plan) document.getElementById('monthly-plan').textContent = data.monthly_plan + '%';
-                    if (data.total_orders) document.getElementById('total-orders').textContent = data.total_orders;
-                    
-                    hideLoader();
-                }
-                else if (data.action === 'get_chart_data_response') {
-                    // График маълумотларини қайта ишлаш
-                    if (data.monthly_progress) {
-                        createMonthlyProgressChart(data.monthly_progress);
-                    }
-                    
-                    if (data.productivity) {
-                        createProductivityChart(data.productivity);
-                    }
-                    
-                    if (data.sections) {
-                        createSectionsChart(data.sections);
-                    }
-                    
-                    if (data.weekly_trend) {
-                        createWeeklyTrendChart(data.weekly_trend);
-                    }
-                    
-                    if (data.percentage_pie) {
-                        createPercentagePieChart(data.percentage_pie);
-                    }
-                }
-            } catch (error) {
-                console.error('Маълумотларни қайта ishlashda xatolik:', error);
-                showMessage('❌ Маълумотларни қайта ishlashda xatolik yuz berdi', 'error');
-            }
-        });
     </script>
 </body>
 </html>
