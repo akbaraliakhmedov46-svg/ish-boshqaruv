@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4361ee;
-            --primary-dark: #3a0ca3;
-            --secondary: #4cc9f0;
-            --accent: #f72585;
-            --success: #2ecc71;
-            --warning: #f39c12;
-            --danger: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #2d3436;
-            --gray: #6c757d;
-            --gray-light: #dfe6e9;
-            --border: #dee2e6;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --border: #cbd5e1;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         * {
@@ -34,10 +34,11 @@
         }
         
         body {
-            background-color: #f5f7fa;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             color: var(--dark);
             line-height: 1.6;
-            padding-bottom: 60px;
+            min-height: 100vh;
+            padding-bottom: 80px;
         }
         
         .app-container {
@@ -49,9 +50,9 @@
         .app-header {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 18px 20px;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            border-radius: 0 0 24px 24px;
+            box-shadow: var(--card-shadow);
             margin-bottom: 25px;
             position: relative;
             overflow: hidden;
@@ -75,6 +76,12 @@
             letter-spacing: 0.5px;
         }
         
+        .company-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
         .current-date {
             font-size: 14px;
             opacity: 0.9;
@@ -93,6 +100,9 @@
             margin: 0 15px 25px;
             box-shadow: var(--card-shadow);
             overflow: hidden;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
         }
         
         .nav-tabs {
@@ -129,7 +139,7 @@
         }
         
         .nav-tab.active {
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             color: var(--primary);
             font-weight: 600;
         }
@@ -157,25 +167,26 @@
         }
         
         .success {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            border: 1px solid #c8e6c9;
+            background-color: #ecfdf5;
+            color: #047857;
+            border: 1px solid #d1fae5;
         }
         
         .error {
-            background-color: #ffebee;
-            color: #c62828;
-            border: 1px solid #ffcdd2;
+            background-color: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fee2e2;
         }
         
         /* Card Styles */
         .card {
             background: white;
-            border-radius: 18px;
-            padding: 22px;
+            border-radius: 20px;
+            padding: 24px;
             margin: 0 15px 25px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
+            border: 1px solid var(--gray-light);
         }
         
         .card:active {
@@ -185,7 +196,7 @@
         .card-title {
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             color: var(--dark);
@@ -201,7 +212,7 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 16px;
             margin-bottom: 20px;
         }
         
@@ -213,6 +224,18 @@
             box-shadow: var(--card-shadow);
             transition: var(--transition);
             border: 1px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
         }
         
         .stat-card:active {
@@ -228,26 +251,23 @@
             justify-content: center;
             margin: 0 auto 12px;
             font-size: 20px;
-        }
-        
-        .stat-card:nth-child(1) .stat-icon {
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             color: var(--primary);
         }
         
         .stat-card:nth-child(2) .stat-icon {
-            background: rgba(76, 201, 240, 0.1);
-            color: var(--secondary);
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
         }
         
         .stat-card:nth-child(3) .stat-icon {
-            background: rgba(247, 37, 133, 0.1);
-            color: var(--accent);
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
         }
         
         .stat-card:nth-child(4) .stat-icon {
-            background: rgba(46, 204, 113, 0.1);
-            color: var(--success);
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
         }
         
         .stat-value {
@@ -262,15 +282,15 @@
         }
         
         .stat-card:nth-child(2) .stat-value {
-            color: var(--secondary);
+            color: var(--success);
         }
         
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent);
+            color: var(--warning);
         }
         
         .stat-card:nth-child(4) .stat-value {
-            color: var(--success);
+            color: var(--danger);
         }
         
         .stat-label {
@@ -305,7 +325,7 @@
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
         
         /* Button Styles */
@@ -326,12 +346,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
         
         .btn-primary:active {
             transform: translateY(2px);
-            box-shadow: 0 2px 8px rgba(67, 97, 238, 0.4);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
         }
         
         .btn-outline {
@@ -341,7 +361,7 @@
         }
         
         .btn-outline:active {
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(59, 130, 246, 0.1);
         }
         
         .btn-icon {
@@ -422,7 +442,7 @@
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 16px;
         }
         
         .quick-action-btn {
@@ -508,19 +528,19 @@
         }
         
         .bichish-card {
-            border-top-color: #4361ee;
+            border-top-color: #3b82f6;
         }
         
         .tasnif-card {
-            border-top-color: #4cc9f0;
+            border-top-color: #10b981;
         }
         
         .tikuv-card {
-            border-top-color: #f72585;
+            border-top-color: #f59e0b;
         }
         
         .qadoqlash-card {
-            border-top-color: #2ecc71;
+            border-top-color: #ef4444;
         }
         
         /* Badge Styles */
@@ -547,14 +567,78 @@
             background: var(--danger);
             color: white;
         }
+        
+        /* Welcome Message */
+        .welcome-message {
+            text-align: center;
+            padding: 20px;
+            margin: 10px 15px 25px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .welcome-message h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .welcome-message p {
+            color: var(--gray);
+        }
+        
+        /* Status Indicators */
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-active {
+            background-color: var(--success);
+        }
+        
+        .status-waiting {
+            background-color: var(--warning);
+        }
+        
+        .status-completed {
+            background-color: var(--primary);
+        }
+        
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header class="app-header">
             <h1>ООО Constaruction Solutions</h1>
-            <p class="current-date"><i class="fas fa-calendar-alt"></i> <span id="current-date-text">Бугун сана: ...</span></p>
+            <p class="company-subtitle">Ишлаб чиқаришни бошқариш тизими</p>
+            <p class="current-date"><i class="fas fa-calendar-alt"></i> <span id="current-date-text">Бугун: 20-Сентябрь, 2023</span></p>
         </header>
+        
+        <div class="welcome-message">
+            <h2>Ҳуш келибсиз!</h2>
+            <p>Бугунги иш режаингизни кўриб чиқинг ва бошқаринг</p>
+        </div>
         
         <div class="nav-tabs-container">
             <div class="nav-tabs">
@@ -590,28 +674,28 @@
                     <div class="stat-icon">
                         <i class="fas fa-calendar-day"></i>
                     </div>
-                    <div class="stat-value" id="daily-work">0</div>
+                    <div class="stat-value" id="daily-work">1,245</div>
                     <div class="stat-label">Кунлик иш</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-calendar-week"></i>
                     </div>
-                    <div class="stat-value" id="weekly-work">0</div>
+                    <div class="stat-value" id="weekly-work">7,865</div>
                     <div class="stat-label">Ҳафталик иш</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
-                    <div class="stat-value" id="monthly-plan">0%</div>
+                    <div class="stat-value" id="monthly-plan">78%</div>
                     <div class="stat-label">Ойлик режа</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <div class="stat-value" id="total-orders">0</div>
+                    <div class="stat-value" id="total-orders">24</div>
                     <div class="stat-label">Буюртмалар</div>
                 </div>
             </div>
@@ -654,11 +738,11 @@
                 <div class="card-title"><i class="fas fa-cut"></i> Бичиш</div>
                 <div class="form-group">
                     <label for="bichish-ish">Иш сони</label>
-                    <input type="number" id="bichish-ish" placeholder="Иш микдорини киритинг">
+                    <input type="number" id="bichish-ish" placeholder="Иш микдорини киритинг" value="350">
                 </div>
                 <div class="form-group">
                     <label for="bichish-hodim">Ходим сони</label>
-                    <input type="number" id="bichish-hodim" placeholder="Ходимлар сонини киритинг">
+                    <input type="number" id="bichish-hodim" placeholder="Ходимлар сонини киритинг" value="8">
                 </div>
                 <button class="btn btn-primary" data-section="bichish"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -667,19 +751,19 @@
                 <div class="card-title"><i class="fas fa-file-alt"></i> Тасниф</div>
                 <div class="form-group">
                     <label for="tasnif-dikimga">Дикимга қилинган иш</label>
-                    <input type="number" id="tasnif-dikimga" placeholder="Дикимга қилинган иш сони">
+                    <input type="number" id="tasnif-dikimga" placeholder="Дикимга қилинган иш сони" value="120">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-pechat">Печат қилинган иш</label>
-                    <input type="number" id="tasnif-pechat" placeholder="Печат қилинган иш сони">
+                    <input type="number" id="tasnif-pechat" placeholder="Печат қилинган иш сони" value="85">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-vishivka">Вишивка қилинган иш</label>
-                    <input type="number" id="tasnif-vishivka" placeholder="Вишивка қилинган иш сони">
+                    <input type="number" id="tasnif-vishivka" placeholder="Вишивка қилинган иш сони" value="45">
                 </div>
                 <div class="form-group">
                     <label for="tasnif-hodim">Ходим сони</label>
-                    <input type="number" id="tasnif-hodim" placeholder="Ходимлар сонини киритинг">
+                    <input type="number" id="tasnif-hodim" placeholder="Ходимлар сонини киритинг" value="12">
                 </div>
                 <button class="btn btn-primary" data-section="tasnif"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -688,15 +772,15 @@
                 <div class="card-title"><i class="fas fa-tshirt"></i> Тикув</div>
                 <div class="form-group">
                     <label for="tikuv-ish">Иш сони</label>
-                    <input type="number" id="tikuv-ish" placeholder="Иш микдорини киритинг">
+                    <input type="number" id="tikuv-ish" placeholder="Иш микдорини киритинг" value="520">
                 </div>
                 <div class="form-group">
                     <label for="tikuv-hodim">Ходим сони</label>
-                    <input type="number" id="tikuv-hodim" placeholder="Ходимлар сонини киритинг">
+                    <input type="number" id="tikuv-hodim" placeholder="Ходимлар сонини киритинг" value="15">
                 </div>
                 <div class="form-group">
                     <label for="tikuv-oyoqchi">Оёқчи ходим сони</label>
-                    <input type="number" id="tikuv-oyoqchi" placeholder="Оёқчи ходимлар сонини киритинг">
+                    <input type="number" id="tikuv-oyoqchi" placeholder="Оёқчи ходимлар сонини киритинг" value="3">
                 </div>
                 <button class="btn btn-primary" data-section="tikuv"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -705,11 +789,11 @@
                 <div class="card-title"><i class="fas fa-box"></i> Қадоқлаш</div>
                 <div class="form-group">
                     <label for="qadoqlash-ish">Иш сони</label>
-                    <input type="number" id="qadoqlash-ish" placeholder="Иш микдорини киритинг">
+                    <input type="number" id="qadoqlash-ish" placeholder="Иш микдорини киритинг" value="210">
                 </div>
                 <div class="form-group">
                     <label for="qadoqlash-hodim">Ходим сони</label>
-                    <input type="number" id="qadoqlash-hodim" placeholder="Ходимлар сонини киритинг">
+                    <input type="number" id="qadoqlash-hodim" placeholder="Ходимлар сонини киритинг" value="6">
                 </div>
                 <button class="btn btn-primary" data-section="qadoqlash"><i class="fas fa-check-circle btn-icon"></i>Сақлаш</button>
             </div>
@@ -751,7 +835,34 @@
                     </button>
                 </div>
                 <div class="loader hidden" id="orders-loader"></div>
-                <ul class="order-list" id="orders-list"></ul>
+                <ul class="order-list" id="orders-list">
+                    <li class="order-item">
+                        <div class="order-title">Ko'ylaklar partiyasi <span class="badge badge-success">75%</span></div>
+                        <div class="order-details">
+                            750/1000 та
+                            <br>Бўлим: Тикув
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="order-details">
+                            Муддат: 25.09.2023 (Қолган кун: 5)
+                        </div>
+                    </li>
+                    <li class="order-item">
+                        <div class="order-title">Shimlar to'plami <span class="badge badge-warning">45%</span></div>
+                        <div class="order-details">
+                            450/1000 та
+                            <br>Бўлим: Бичиш
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <div class="order-details">
+                            Муддат: 28.09.2023 (Қолган кун: 8)
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         
@@ -801,6 +912,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="fab" id="main-fab">
+        <i class="fas fa-plus"></i>
     </div>
 
     <script>
@@ -889,6 +1004,44 @@
         document.getElementById('quickReport').addEventListener('click', () => {
             getReport('daily');
         });
+        
+        // FAB функционали
+        document.getElementById('main-fab').addEventListener('click', () => {
+            // FAB учун функционал
+            showMessage('✅ Функционал ишга туширилди', 'success');
+        });
+        
+        // Дастлабки график маълумотлари
+        function initCharts() {
+            createMonthlyProgressChart({
+                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
+                plans: [7000, 6500, 6000, 5500],
+                actuals: [5600, 5200, 4800, 4200]
+            });
+            
+            createProductivityChart({
+                days: ['Душ', 'Сеш', 'Чор', 'Пай', 'Жум', 'Шан', 'Якш'],
+                bichish: [350, 420, 380, 450, 500, 0, 0],
+                tasnif: [250, 280, 320, 300, 350, 0, 0],
+                tikuv: [520, 580, 600, 550, 620, 0, 0],
+                qadoqlash: [210, 230, 250, 200, 240, 0, 0]
+            });
+            
+            createSectionsChart({
+                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
+                values: [5600, 5200, 4800, 4200]
+            });
+            
+            createWeeklyTrendChart({
+                days: ['Душ', 'Сеш', 'Чор', 'Пай', 'Жум', 'Шан', 'Якш'],
+                values: [1330, 1510, 1550, 1500, 1710, 0, 0]
+            });
+            
+            createPercentagePieChart({
+                labels: ['Бичиш', 'Тасниф', 'Тикув', 'Қадоқлаш'],
+                values: [80, 75, 70, 65]
+            });
+        }
         
         // Функциялар
         function sendSectionData(section) {
@@ -1058,14 +1211,14 @@
                     datasets: [{
                         label: 'Режа',
                         data: data.plans,
-                        backgroundColor: 'rgba(67, 97, 238, 0.2)',
-                        borderColor: 'rgba(67, 97, 238, 1)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
                         borderWidth: 1
                     }, {
                         label: 'Бажарилди',
                         data: data.actuals,
-                        backgroundColor: 'rgba(76, 201, 240, 0.2)',
-                        borderColor: 'rgba(76, 201, 240, 1)',
+                        backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -1099,25 +1252,25 @@
                     datasets: [{
                         label: 'Бичиш',
                         data: data.bichish,
-                        borderColor: 'rgba(67, 97, 238, 1)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Тасниф',
                         data: data.tasnif,
-                        borderColor: 'rgba(76, 201, 240, 1)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Тикув',
                         data: data.tikuv,
-                        borderColor: 'rgba(247, 37, 133, 1)',
+                        borderColor: 'rgba(245, 158, 11, 1)',
                         tension: 0.1,
                         fill: false
                     }, {
                         label: 'Қадоқлаш',
                         data: data.qadoqlash,
-                        borderColor: 'rgba(46, 204, 113, 1)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
                         tension: 0.1,
                         fill: false
                     }]
@@ -1152,16 +1305,16 @@
                     datasets: [{
                         data: data.values,
                         backgroundColor: [
-                            'rgba(67, 97, 238, 0.7)',
-                            'rgba(76, 201, 240, 0.7)',
-                            'rgba(247, 37, 133, 0.7)',
-                            'rgba(46, 204, 113, 0.7)'
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(16, 185, 129, 0.7)',
+                            'rgba(245, 158, 11, 0.7)',
+                            'rgba(239, 68, 68, 0.7)'
                         ],
                         borderColor: [
-                            'rgba(67, 97, 238, 1)',
-                            'rgba(76, 201, 240, 1)',
-                            'rgba(247, 37, 133, 1)',
-                            'rgba(46, 204, 113, 1)'
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(245, 158, 11, 1)',
+                            'rgba(239, 68, 68, 1)'
                         ],
                         borderWidth: 1
                     }]
@@ -1192,8 +1345,8 @@
                     datasets: [{
                         label: 'Иш чиқими',
                         data: data.values,
-                        backgroundColor: 'rgba(67, 97, 238, 0.5)',
-                        borderColor: 'rgba(67, 97, 238, 1)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -1227,16 +1380,16 @@
                     datasets: [{
                         data: data.values,
                         backgroundColor: [
-                            'rgba(67, 97, 238, 0.7)',
-                            'rgba(76, 201, 240, 0.7)',
-                            'rgba(247, 37, 133, 0.7)',
-                            'rgba(46, 204, 113, 0.7)'
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(16, 185, 129, 0.7)',
+                            'rgba(245, 158, 11, 0.7)',
+                            'rgba(239, 68, 68, 0.7)'
                         ],
                         borderColor: [
-                            'rgba(67, 97, 238, 1)',
-                            'rgba(76, 201, 240, 1)',
-                            'rgba(247, 37, 133, 1)',
-                            'rgba(46, 204, 113, 1)'
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(245, 158, 11, 1)',
+                            'rgba(239, 68, 68, 1)'
                         ],
                         borderWidth: 1
                     }]
@@ -1287,6 +1440,7 @@
         // Дастлабки маълумотларни юклав олиш
         refreshData();
         loadOrders();
+        initCharts();
         
         // Telegram Web App дан келган маълумотларни қайта ишлаш
         tg.onEvent('webAppDataReceived', (event) => {
